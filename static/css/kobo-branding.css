@@ -121,7 +121,7 @@ section {
   padding:0px;
 }
 
-.header-bar {
+/*.header-bar {
     width: 100%;
     height: 40px;
     position: fixed;
@@ -161,7 +161,7 @@ section {
   color: #1e8fde;
 }
 
-.header-bar__title-text { color: white; }
+.header-bar__title-text { color: white; }*/
 
 .btn {
     margin-top: 5px;
@@ -172,7 +172,7 @@ section {
 
 .btn:hover, .btn:focus { background-color: #4d4d4d; }
 
-.header-bar__top-logo {
+/*.header-bar__top-logo {
     background: url(/static/images/kobologo.svg);
     background-size: 120px 27px;
     background-repeat: none;
@@ -183,11 +183,251 @@ section {
     position: absolute;
     right:0px;
 }
+*/
+
+/* ==========================================================================
+   Sticky Sidebar
+   ========================================================================== */
+body {
+  padding-top:0px !important;
+  padding-left:70px;
+  transition: all 0.4s ease 0s; 
+}
+
+body.sidebar-is-active {
+  padding-left: 250px;
+}
+/*
+$sidebarBaseColor: #282828;
+$sidebarHeaderColor: lighten($sidebarBaseColor, 2%);
+$sidebarTitleColor:  lighten($sidebarBaseColor, 30%); #627cb7
+$sidebarTextColor: #bbb;
+$barColor: #e99d1a;
+$barColor: #998EFA;
+
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+.sidebar-wrapper {
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: -150px;
+  top: 0px;
+  left: -30px;
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  z-index: 999;
+  transition: all 0.4s ease 0s; 
+  background: #282828;
+  overflow: hidden;
+}
+
+.sidebar-wrapper.is-active {
+  left: 150px;
+}
+ul.sidebar .sidebar-main a,
+.sidebar-footer,
+ul.sidebar .sidebar-list a:hover,
+.sidebar-wrapper:not(.is-active) ul.sidebar .sidebar-title.separator {
+  /* Sidebar header and footer color */
+  background: #2d2d2d;
+}
+
+ul.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 45px;
+  padding: 0;
+  margin: 0;
+  text-indent: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+}
+ul.sidebar li a {
+  color: #fff;
+  display: block;
+  float: left;
+  text-decoration: none;
+  width: 250px;
+  color: #fff;
+  display: block;
+  float: left;
+  text-decoration: none;
+  width: 250px;
+}
+
+li.sidebar-main {
+  height: 65px;
+  display: block;
+  margin:0px;
+  padding: 0px;
+}
+.sidebar-main a {
+    font-size: 18px;
+    line-height: 60px;
+}
+.sidebar-main a:focus {
+  outline:none;
+}
+.sidebar-main .menu-icon {
+    float: right;
+    font-size: 18px;
+    padding-right: 2px;
+}
+ul.sidebar li.sidebar-title {
+  color: #757575;
+  font-size: 12px;
+  height: 35px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+ul.sidebar li.sidebar-list {
+  height: 40px;
+  display: block;
+}
+ul.sidebar li.sidebar-list a {
+  text-indent: 25px;
+  font-size: 15px;
+  color: #BBB;
+  line-height: 40px;
+}
+ul.sidebar li.sidebar-list a:hover {
+  color: #fff;
+  border-left: 3px solid #998EFA;
+  text-indent: 22px;
+}
+ul.sidebar li.sidebar-list .menu-icon {
+  float: right;
+  padding-right: 15px;
+  line-height: 40px;
+  width: 70px;
+}
+ul.sidebar li.sidebar-list a:hover .menu-icon {
+  text-indent: 25px;
+}
+
+.sidebar-footer {
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.sidebar-footer div a {
+  color: #BBB;
+  font-size: 12px;
+  line-height: 43px;
+  color: #bbb;
+  font-size: 12px;
+  line-height: 43px;
+}
+.sidebar-footer div a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.sidebar-footer .col-xs-4 {
+  float: left;
+  width: 33.3333333333%; 
+}
+.sidebar-wrapper:not(.is-active) ul.sidebar {
+  bottom:0;
+}
+
+.sidebar-wrapper:not(.is-active) ul.sidebar .sidebar-title {
+  visibility: hidden;
+}
+
+.sidebar-wrapper:not(.is-active) ul.sidebar .sidebar-title.separator {
+  height: 2px;
+  margin: 13px 0;
+}
+
+.sidebar-wrapper:not(.is-active) ul.sidebar .sidebar-list a:hover span {
+  border-left: 3px solid #998EFA;
+  text-indent: 22px;
+}
+
+.sidebar-wrapper:not(.is-active) .sidebar-footer {
+  display: none;
+}
+
+.kobo-icon {
+    display: inline-block;
+    width: 70px;
+    height: 60px;
+    text-align: center;
+    background-image: url("/static/images/kobosquare-small.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+.kobo-icon:hover {
+    opacity: 0.6;
+}
+
+.account-box {
+  position: relative;
+  height: 32px;
+}
+.account-box__name {
+  position: absolute;
+  top: 6px;
+  left: 22px;
+  padding: 0 2px;
+  color: dimgrey;
+  max-width: 175px;
+  display: inline-block;
+  background-color: #282828;
+  text-indent: 0;
+  z-index: 3;
+}
+.account-box__name a {
+  color: dimgrey;
+}
+.account-box__indicator {
+  padding-top: 1px;
+  border-top: 1px solid dimgrey;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 2;
+}
+.account-box__image {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 7px;
+  left: 205px;
+  overflow: hidden;
+  border-radius: 3px;
+  z-index: 3;
+}
+.account-box__image img {
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+.account-box__logout {
+  display: none;
+}
 
 /* ==========================================================================
    Top level menu
    ========================================================================== */
-
+/*
 .top-level-menu {
     width: 230px;
     position: fixed;
@@ -208,10 +448,10 @@ section {
   padding:0;
   list-style: none;
 }
-
+*/
 /* Top level menu items
    -------------------------------------------------------------------------- */
-
+/*
 .top-level-menu__item > a {
     height: 40px;
     padding-right: 12px;
@@ -231,7 +471,7 @@ section {
 .top-level-menu__item.is-active > a {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
 
 /* Top level menu items
    -------------------------------------------------------------------------- */

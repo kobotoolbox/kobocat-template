@@ -1,0 +1,31 @@
+{% load i18n %}
+
+<div class="sidebar-wrapper">
+    <ul class="sidebar" >
+        <li class="sidebar-main">
+        	<a href="#"><span class="kobo"><span class="ko">Ko</span><span class="bo">Bo</span><span class="toolbox">Toolbox</span></span><i class="menu-icon kobo-icon"></i></a>
+        </li>
+        <div class="account-box account-box--loggedin">
+            <div class="account-box__name">{{ content_user.username }}</a></div>
+            <div class="account-box__indicator"></div>
+            <div class="account-box__image"><img src="{{ profile.gravatar }}"></div>
+            <div href="#" class="account-box__logout">{% trans "logout" %}</div>
+        </div>
+        <li class="sidebar-title" ><span>{% trans "drafts in progress" %}</span></li>
+        <li class="sidebar-list"><a class=" active" href="{{ koboform_url }}"><span>{% trans "forms" %}</span><span> </span><span class="menu-icon fa fa-fw fa-files-o"></span></a></li>
+        <li class="sidebar-list"><a class="" href="{{ koboform_url }}#/library"><span>{% trans "library" %}</span><span> </span><span class="menu-icon fa fa-fw fa-book"></span></a></li>
+        <li class="sidebar-title"><span>{% trans "deployed projects" %}</span></li>
+        <li class="sidebar-list"><a href="/"><span>{% trans "projects" %}</span><span> </span><span class="menu-icon fa fa-fw fa-globe"></span></a></li>
+        <li class="sidebar-title"><span>{% trans "account actions" %}</span></li>
+        {% if user.is_authenticated %}
+	        <li class="sidebar-list"><a href="{% url "auth_logout" %}"><span>{% trans "logout" %}</span><span> </span><span class="menu-icon fa fa-fw fa-sign-out"></span></a></li>
+	      {% else %}
+        	<li class="sidebar-list"><a href="{% url "auth_login" %}"><span>{% trans "login" %}</span><span> </span><span class="menu-icon fa fa-fw fa-sign-out"></span></a></li>
+        {% endif %}
+    </ul>
+    <div class="sidebar-footer">
+        <div class="col-xs-4"><a href="http://support.kobotoolbox.org/" target="_blank">help</a></div>
+        <div class="col-xs-4"><a href="http://www.kobotoolbox.org/" target="_blank">about</a></div>
+        <div class="col-xs-4"><a href="https://github.com/kobotoolbox/" target="_blank">source</a></div>
+    </div>
+</div>

@@ -154,7 +154,7 @@ section {
     margin-right: 30px;
     color: white;
     position: absolute;
-    right:110px;
+    right:190px;
 }
 
 .header-bar__support:hover {
@@ -181,9 +181,19 @@ section {
     margin-top: 5px;
     margin-right: 6px;
     position: absolute;
-    right:0px;
+    right:80px;
 }
 
+.header-bar__top-logo-myo {
+    background: url(/static/images/myo-small.png);
+    background-size: 65px 27px;
+    width: 65px;
+    height: 27px;
+    margin-top: 5px;
+    margin-right: 6px;
+    position: absolute;
+    right:0px;
+}
 /* ==========================================================================
    Top level menu
    ========================================================================== */

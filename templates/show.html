@@ -8,6 +8,11 @@
   .kc-hide { display: none !important; }
   </style>
 
+{% endblock %}
+
+{% block content %}
+{% load i18n %}
+
   <!-- NEW SANDBOX HTML OUTSIDE THE CONTAINER -->
   {% if is_owner %}
   <div class="sub-header-bar">
@@ -220,11 +225,6 @@
   {% endif %}
 
   <!-- END NEW SANDBOX HTML OUTSIDE THE CONTAINER -->
-
-{% endblock %}
-
-{% block content %}
-{% load i18n %}
 
 <!-- NEW SINGLE PROJECT VIEW -->
     <div class="dashboard__left">

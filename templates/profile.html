@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block additional-headers %}
-{% load i18n %}
+{% block content %}
   {% if show_dashboard %} 
   <header class="projects-list__header">
     <hgroup class="container">
@@ -10,20 +9,18 @@
     </hgroup>
   </header>
   {% endif %}
-{% endblock %}
 
-<div class="projects__list">
-{% block content %}
-  {% if show_dashboard %} 
-    {% include "published_surveys.html" %}
-  {% else %}
-    <!-- user is not logged in -->
-    <script type="text/javascript">
-      console && console.log && console.log("profile.html: redirect to login?")
-    </script>
-  {% endif %}
+  <div class="projects__list">
+    {% if show_dashboard %} 
+      {% include "published_surveys.html" %}
+    {% else %}
+      <!-- user is not logged in -->
+      <script type="text/javascript">
+        console && console.log && console.log("profile.html: redirect to login?")
+      </script>
+    {% endif %}
+  </div>
 {% endblock %}
-</div>
 
 {% block below-content %}
   {% if show_dashboard %} 

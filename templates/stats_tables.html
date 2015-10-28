@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="{{STATIC_URL}}css/stats_tables.css" />
 <link rel="stylesheet" href="{{STATIC_URL}}bower_components/backgrid/lib/backgrid.min.css" />
 
+{% endblock %}
+
+{% block content %}
+{% load i18n %}
+
 <div class="sub-header-bar">
   <div class="container__wide">
     <a class="sub-header__back" href="{% url "onadata.apps.main.views.show" xform.user.username xform.id_string %}"><i class="fa fa-chevron-left"></i> {% trans "Return to" %} {{ xform.title }}</a>
@@ -18,10 +23,6 @@
     </hgroup>
 </header>
 
-{% endblock %}
-
-{% block content %}
-{% load i18n %}
 <section>
   <div>
       <form id="table-create-form" class="form-horizontal">

@@ -57,6 +57,12 @@ body {
   background: #E9EDF0;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(83,109,254);
+  font-weight: 500;
+}
+
 .navbar-fixed-top.hidden {
   display: none;
 }
@@ -111,6 +117,12 @@ body {
   background: white;
   padding:20px;
   max-width: 984px;
+}
+
+.main:after {
+  clear:both;
+  display: block;
+  content:' ';
 }
 
 .main.user_profile.container-fluid {
@@ -237,7 +249,7 @@ section {
    -------------------------------------------------------------------------- */
 
 .sub-header-bar {
-  background-color: #fff;
+/*  background-color: #fff;
   border-bottom: 1px solid #e3e8ec;
   height: 40px;
   left: 0;
@@ -247,7 +259,7 @@ section {
   transition: width 150ms ease 0s, left 150ms ease 0s;
   width: 100%;
   z-index: 6;
-}
+*/}
 
 .sub-header-bar a {
   color: #333;
@@ -289,7 +301,7 @@ section {
 
 .sub-header-bar + .single-project__header, 
 .sub-header-bar + .data-page__header {
-  padding-top: 70px;
+  padding-top: 40px;
   margin-top: 0px;
 }
 
@@ -302,6 +314,7 @@ section {
 .projects-list__header .container, 
 .data-page__header .container {
   max-width: 984px;
+  margin-left: 10px;
 }
 
 .single-project__header .fa-caret-right, 

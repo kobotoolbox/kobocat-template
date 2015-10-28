@@ -1,0 +1,64 @@
+{% load i18n %}
+
+<header class="mdl-layout__header is-casting-shadow mdl-color--blue-grey-800">
+	{% if user.is_authenticated %}
+    <div class="mdl-layout__drawer-button"><i class="material-icons">menu</i></div>
+	{% endif %}
+
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">
+        <span class="header-breadcrumb__item">Projects</span>
+      </span>
+      <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/"><span class="account-box__logo"></span></a>
+          <a class="mdl-navigation__link"><span class="account-box__name">kobo</span><span class="account-box__image"><img src="{{ profile.gravatar }}"></span></a>
+        </nav>
+    </div>
+</header>
+
+{% if user.is_authenticated %}
+	<div class="drawer mdl-layout__drawer mdl-color--blue-grey-800">
+	  <span class="mdl-layout__title">
+	    <a href="/"><span class="account-box__logo"></span></a>
+	  </span>
+	  <nav class="mdl-navigation">
+	    <div class="drawer-separator"></div>
+	    <span class="mdl-navigation__heading">
+	      {% trans "drafts in progress" %}
+	    </span>
+	    <a class="mdl-navigation__link" href="{{ koboform_url }}">
+	      <span class="menu-icon fa fa-fw fa-files-o"></span>
+	      <span>{% trans "forms" %}</span>
+	    </a>
+	    <a class="mdl-navigation__link" href="{{ koboform_url }}#/library">
+	      <span class="menu-icon fa fa-fw fa-book"></span>
+	      <span>{% trans "library" %}</span>
+	    </a>
+	    <a class="mdl-navigation__link" href="{{ koboform_url }}#/collections">
+	      <span class="menu-icon fa fa-fw fa-folder-o"></span>
+	      <span>{% trans "collections" %}</span>
+	    </a>
+
+	    <div class="drawer-separator"></div>
+	    <span class="mdl-navigation__heading">{% trans "deployed projects" %}</span>
+	    <a class="mdl-navigation__link active" href="/">
+	      <span class="menu-icon fa fa-fw fa-globe"></span>
+	      <span>{% trans "projects" %}</span>
+	    </a>
+
+	    <div class="drawer-separator"></div>
+	    <span class="mdl-navigation__heading">{% trans "account actions" %}</span>
+	    <a class="mdl-navigation__link" href="{% url "auth_logout" %}">
+	      <span class="menu-icon fa fa-fw fa-sign-out"></span>
+	      <span>{% trans "logout" %}</span>
+	    </a>
+	  </nav>
+
+	  <div class="drawer__footer">
+	    <a href="http://support.kobotoolbox.org/" target="_blank">{% trans "help" %}</a>
+	    <a href="http://www.kobotoolbox.org/" target="_blank">{% trans "about" %}</a>
+	    <a href="https://github.com/kobotoolbox/" target="_blank">{% trans "source" %}</a>
+	  </div>
+	</div>
+{% endif %}

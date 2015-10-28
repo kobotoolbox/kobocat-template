@@ -1,0 +1,83 @@
+.mdl-layout__drawer .mdl-layout__title {
+	line-height: 64px;
+	padding-left: 40px;
+	padding-top: 16px;
+}
+
+.account-box__logo {
+	width: 120px;
+	height: 28px;
+	background: url("/static/images/kobologo.svg") no-repeat;
+	background-size: contain;
+	display: block;
+}
+
+.account-box__image img {
+	max-width: 32px;
+	max-height: 32px;
+	margin-left: 8px;
+}
+
+.mdl-layout__header a, 
+.mdl-layout__drawer a {
+  color: white;
+}
+
+
+.drawer-separator {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+}
+
+.mdl-layout__drawer {
+  border-right:1px solid rgba(255, 255, 255, 0.2);
+}
+.mdl-layout__drawer {
+  color: #FFF;
+  padding-top:16px;
+}
+
+.mdl-layout__drawer .mdl-navigation__heading {
+  padding: 8px 40px;
+  opacity: 0.5;
+  font-size: 0.85em;
+}
+
+.mdl-navigation {
+  padding-top: 8px;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+	color: white;
+	padding: 10px 46px;
+}
+.mdl-navigation .mdl-navigation__link span.menu-icon {
+  font-size: 16px;
+  margin-right: 6px; 
+  color: rgb(64,196,255) !important;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link.active, 
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+	background-color: rgb(38, 50, 56);
+	color: #FFF;
+}
+
+.mdl-layout__drawer .drawer__footer {
+    width:100%;
+    position: absolute;
+    bottom: 6px;
+    display: flex;
+}
+
+.mdl-layout__drawer .drawer__footer a {
+	flex-grow:1;
+	color: #FFF;
+	text-align: center;
+	opacity: 0.6;
+}
+
+.mdl-layout__drawer .drawer__footer a:hover {
+  opacity: 1;
+}

@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<header class="mdl-layout__header is-casting-shadow mdl-color--blue-grey-800">
+
+    <div class="mdl-layout__header-row header-mini">
+      <span class="mdl-layout-title">
+        <span class="header-breadcrumb__item">
+        	<a href="{% url "onadata.apps.main.views.show" xform.user.username xform.id_string %}"><i class="fa fa-arrow-left"></i> back to project</a>
+        </span>
+      </span>
+      <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/"><span class="account-box__logo"></span></a>
+          <a class="mdl-navigation__link"><span class="account-box__name">kobo</span><span class="account-box__image"><img src="{{ profile.gravatar }}"></span></a>
+        </nav>
+    </div>
+</header>

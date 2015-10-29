@@ -16,13 +16,16 @@
 {% block body %}
 
 <body>
-  {% include "topbar.html" %}
+
+  <div class="page-wrapper mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  {% include "mdl-drawer-mini.html" %}
+  </div>
+
   {% if mapbox_layer %}
   <script type="text/javascript">
     var customMapBoxTileLayer = {label: '{{mapbox_layer.map_name}}', url: '{{mapbox_layer.link}}'};
   </script>
   {% endif %}
-  <div class="map__back"><a href="{% url "onadata.apps.main.views.show" xform.user.username xform.id_string %}">back to project</a></div>
 
   <ul class="nav pull-right map__viewby">
     <li class="hidden"><a href="#" class="dropdown-toggle">{% trans "Data" %}</a></li>

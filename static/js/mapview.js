@@ -297,15 +297,15 @@ function loadFormJSONCallback()
 }
 
 // update the number of geo-coded submissions in the top-bar based on geoJSON
-function _updateGeoCodedCount(geoJSON) {
-   var geoCount = geoJSON.features.length;
-   var countDiv = $('#submission_count');
-   var newText = geoCount + " / " + countDiv.text();
-   var newTitle = _.template(countDiv.attr('title'),
-   	{geocoded_submission_count: geoCount})
-   countDiv.attr('title', newTitle);
-   countDiv.text(newText);
-}
+// function _updateGeoCodedCount(geoJSON) {
+//    var geoCount = geoJSON.features.length;
+//    var countDiv = $('#submission_count');
+//    var newText = geoCount + " / " + countDiv.text();
+//    var newTitle = _.template(countDiv.attr('title'),
+//    	{geocoded_submission_count: geoCount})
+//    countDiv.attr('title', newTitle);
+//    countDiv.text(newText);
+// }
 
 // callback called after response data has been loaded via the mongo form API
 function loadResponseDataCallback()
@@ -317,7 +317,7 @@ function loadResponseDataCallback()
     var geoJSON = formResponseMngr.getAsGeoJSON();
 
     _buildMarkerLayer(geoJSON);
-    _updateGeoCodedCount(geoJSON);
+    // _updateGeoCodedCount(geoJSON);
 
     // just to make sure the nav container exists
     var navContainer = $(navContainerSelector);

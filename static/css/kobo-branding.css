@@ -289,12 +289,11 @@ section {
 
 /* Headers */
 
- 
 .single-project__header, 
 .projects-list__header, 
 .data-page__header {
   margin-bottom: 30px;
-  background-color: white;
+  /*background-color: white;*/
   padding:20px 0px;
   margin-top: -20px;
 }
@@ -416,11 +415,9 @@ td.published_forms__cell--project a:hover {
 
 /* Map overrides */
 
-#map_canvas {
-  margin-top: -15px;
-}
-
+#map_canvas .leaflet-top, 
 #map_canvas .leaflet-top {
+  padding-top: 70px;
   z-index: 14;
 }
 
@@ -440,7 +437,7 @@ td.published_forms__cell--project a:hover {
 .map__viewby {
   position: absolute;
   left: 50px;
-  top: 50px;
+  top: 80px;
   background: white;
   z-index: 20;
   border-radius: 10px;
@@ -456,6 +453,7 @@ td.published_forms__cell--project a:hover {
   padding: 6px 8px;
   margin: 0;
   text-align: center;
+  color: #61B1EA;
 }
 
 .map__viewby > li > a:hover, 
@@ -497,7 +495,10 @@ td.published_forms__cell--project a:hover {
 .map__viewby ul.questions li a {
   white-space: normal;
   padding:4px 15px;
-  line-height: 1.6em;
+  line-height: 1.4em;
+  display: block;
+  font-size: 0.9em;
+  color: #61B1EA;
 }
 
 .map__viewby .dropdown-menu li > a:hover, 
@@ -586,6 +587,11 @@ button.btn[disabled], input.btn[disabled] {
   border-bottom:2px solid #444;
   opacity: 0.75;
   cursor: no-drop;
+}
+
+/* form overrides */
+label { 
+  padding-right: 10px;
 }
 
 i.fa-trash-o {

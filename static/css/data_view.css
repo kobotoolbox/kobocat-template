@@ -1,0 +1,42 @@
+.data-table-container {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.table-control-container {
+  display: inline-block;
+  margin: 0 10px;
+  min-height: 30px;
+  vertical-align: top;
+  /*background-color: purple;*/
+}
+
+.language-picker-container {
+  margin-left: 0px;
+}
+
+.data-table-container table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.backgrid-filter.form-search {
+	float: none !important;
+	display: inline-block;
+	margin:0 10px !important;
+	vertical-align: top;
+}
+
+.backgrid-filter input[type="search"] {
+	border-radius: 0px;
+	padding-top:2px;
+	padding-bottom:2px;
+	font-size: 0.85em;
+}
+
+.backgrid-filter .search, 
+.backgrid-filter .clear {
+	margin-top: -12px;
+}

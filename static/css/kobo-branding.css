@@ -283,16 +283,16 @@ section {
   margin-right: 6px;
 }
 
-.sub-header-bar > .container__wide > a:first-child {
+/*.sub-header-bar > .container__wide > a:first-child {
   margin-left: 12px;
 }
-
+*/
 /* Headers */
 
 .single-project__header, 
 .projects-list__header, 
 .data-page__header {
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
   /*background-color: white;*/
   padding:20px 0px;
   margin-top: -20px;
@@ -313,7 +313,6 @@ section {
 .projects-list__header .container, 
 .data-page__header .container {
   max-width: 984px;
-  margin-left: 10px;
 }
 
 .single-project__header .fa-caret-right, 
@@ -537,6 +536,7 @@ input.btn, input.btn:hover,
   background: #3C95D3;
   border-bottom:2px solid #336286;
   color: white;
+  padding:2px 6px 3px;
 }
 
 button.btn.btn-primary, 
@@ -615,6 +615,14 @@ i.fa-trash-o {
   overflow: hidden;
 }
 
+.mdl-layout__header-row.header-mini {
+    padding-left: 20px;
+}
+
+.mdl-layout__header-row.header-mini .mdl-layout-title {
+    font-size: 14px;
+}
+
 /* Boostrap media queries overrides */
 @media (max-width: 979px) {
   body {
@@ -622,15 +630,15 @@ i.fa-trash-o {
     padding-right: 0px;
   }  
 
-  .single-project__header, .projects-list__header, .data-page__header {
-    padding-left:20px;
-    padding-right: 20px;
-  }
+  /*.single-project__header, .projects-list__header, .data-page__header {*/
+    /*padding-left:20px;*/
+    /*padding-right: 20px;*/
+  /*}*/
 
-  .container__wide .row {
+/*  .container__wide .row {
     margin-left: 0;
   }
-
+*/
 }
 
 @media (min-width:768px) and (max-width: 979px) {

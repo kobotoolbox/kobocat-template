@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block additional-headers %}
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="{{STATIC_URL}}galleria/themes/classic/galleria.classic.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/form.css">
+  <style type="text/css">
+  #gallery { 
+  	height:calc(100% - 70px);
+  	padding-top:70px;
+  	background-color: #000;
+  	color: white;
+	}
+
+	.placeholder {
+		text-align: center;
+		padding:40px;
+		font-size: 16px;
+		opacity: 0.6;
+	}
+  </style>
+
+{% endblock %}
+
+{% block body %}
+<body>
+
+  <div class="page-wrapper mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    {% include "mdl-drawer-mini.html" %}
+  </div>
+
+
+  <div id="gallery">
+	  {# if images|length > 0 #}
+		  {% for image_url in images %}
+		      <a href="{{ image_url.large }}">
+		          <img longdesc={{ image_url.original }} src="{{ image_url.small }}" alt="{{ image_url.original }}">
+		      </a>
+		  {% endfor %}
+	  {# else #}
+	  	<div class="placeholder">No images available</div>
+		{# endif #}
+  </div>
+
+{% block javascript %}
+{{ block.super }}
+<script type="text/javascript" src="{{STATIC_URL}}galleria/galleria-1.2.8.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}galleria/themes/classic/galleria.classic.min.js"></script>
+
+<script type="text/javascript">
+    Galleria.configure({
+        transition: 'fade',
+        lightbox: false,
+        popupLinks: true,
+        showInfo: true
+    });
+    // Initialize Galleria if there are images
+    var imgs = $('#gallery img').length;
+    if (imgs > 0) {
+	    Galleria.run('#gallery');
+    }
+</script>
+
+{% endblock %}
+</body>
+{% endblock %}

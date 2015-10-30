@@ -210,11 +210,3 @@ ul.nav li.dropdown ul.dropdown-menu {
 ul.nav li.dropdown:hover ul.dropdown-menu {
     display: block;
 }
-
-.mdl-layout__header-row.header-mini {
-    padding-left: 20px;
-}
-
-.mdl-layout__header-row.header-mini .mdl-layout-title {
-    font-size: 14px;
-}
